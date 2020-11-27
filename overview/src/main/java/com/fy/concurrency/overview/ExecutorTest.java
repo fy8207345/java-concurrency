@@ -1,12 +1,15 @@
 package com.fy.concurrency.overview;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.Executor;
 
+@Slf4j
 public class ExecutorTest {
     public static void main(String[] args) {
         Executor executor = new Invoker();
         executor.execute(() -> {
-            System.out.println("task executed");
+            log.info("task executed");
         });
     }
 
